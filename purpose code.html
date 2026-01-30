@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOUL-NET | Your Purpose</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter', sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background: radial-gradient(circle at top, #0b1220, #020409);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+}
+
+/* Progress bar */
+.progress{
+    position:absolute;
+    top:40px;
+    display:flex;
+    gap:8px;
+}
+
+.progress span{
+    width:50px;
+    height:6px;
+    background:#1f2937;
+    border-radius:10px;
+}
+
+.progress span.active{
+    background:linear-gradient(90deg,#6366f1,#22d3ee);
+}
+
+/* Card */
+.card{
+    width:480px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:22px;
+    padding:36px;
+    backdrop-filter: blur(18px);
+    box-shadow:0 30px 90px rgba(0,0,0,0.6);
+    z-index:1;
+}
+
+/* Icon */
+.icon{
+    width:64px;
+    height:64px;
+    margin:0 auto 18px;
+    background:linear-gradient(180deg,#1e293b,#020617);
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.icon svg{
+    width:32px;
+    height:32px;
+    stroke:#22d3ee;
+}
+
+/* Heading */
+h1{
+    text-align:center;
+    font-size:26px;
+    font-weight:700;
+}
+
+.subtitle{
+    text-align:center;
+    margin-top:8px;
+    color:#94a3b8;
+    font-size:15px;
+}
+
+/* Options */
+.options{
+    margin-top:28px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.option{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:18px;
+    border-radius:16px;
+    border:1px solid rgba(255,255,255,0.12);
+    background:rgba(255,255,255,0.03);
+    cursor:pointer;
+    transition:all 0.3s ease;
+}
+
+.option:hover{
+    background:rgba(255,255,255,0.06);
+}
+
+.option.active{
+    border-color:#6366f1;
+    background:rgba(99,102,241,0.12);
+}
+
+/* Radio */
+.radio{
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    border:2px solid #6366f1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.radio::after{
+    content:'';
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#6366f1;
+    opacity:0;
+}
+
+.option.active .radio::after{
+    opacity:1;
+}
+
+/* Option icon */
+.opt-icon{
+    width:34px;
+    height:34px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#a5b4fc;
+}
+
+/* Text */
+.opt-text h3{
+    font-size:16px;
+    font-weight:600;
+}
+
+.opt-text p{
+    font-size:14px;
+    color:#9ca3af;
+    margin-top:4px;
+}
+
+/* Buttons */
+.actions{
+    display:flex;
+    gap:16px;
+    margin-top:30px;
+}
+
+button{
+    flex:1;
+    padding:16px;
+    border-radius:14px;
+    border:none;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:all 0.3s ease;
+}
+
+.back{
+    background:#ffffff;
+    color:#9ca3af;
+}
+
+.back:hover{
+    background:#e5e7eb;
+}
+
+.continue{
+    background:#5b6cff;
+    color:#fff;
+}
+
+.continue:hover{
+    background:linear-gradient(90deg,#6366f1,#22d3ee);
+}
+</style>
+</head>
+
+<body>
+
+<!-- Progress -->
+<div class="progress">
+    <span class="active"></span>
+    <span class="active"></span>
+    <span></span>
+</div>
+
+<!-- Card -->
+<div class="card">
+
+    <div class="icon">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 18h6M10 22h4M12 2a7 7 0 00-4 12c.5.5 1 1.5 1 2h6c0-.5.5-1.5 1-2a7 7 0 00-4-12z"/>
+        </svg>
+    </div>
+
+    <h1>Your Purpose</h1>
+    <p class="subtitle">How will you use SOUL-NET?</p>
+
+    <div class="options">
+
+        <div class="option active">
+            <div class="radio"></div>
+            <div class="opt-icon">👤</div>
+            <div class="opt-text">
+                <h3>Personal</h3>
+                <p>Track life decisions & personal growth</p>
+            </div>
+        </div>
+
+        <div class="option">
+            <div class="radio"></div>
+            <div class="opt-icon">✨</div>
+            <div class="opt-text">
+                <h3>Learning</h3>
+                <p>Document learning journeys & insights</p>
+            </div>
+        </div>
+
+        <div class="option">
+            <div class="radio"></div>
+            <div class="opt-icon">🎯</div>
+            <div class="opt-text">
+                <h3>Decisions</h3>
+                <p>Strategic decision making & analysis</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="actions">
+        <button class="back">Back</button>
+        <button class="continue">Continue →</button>
+    </div>
+
+</div>
+
+<script>
+const options = document.querySelectorAll(".option");
+
+options.forEach(opt=>{
+    opt.addEventListener("click", ()=>{
+        options.forEach(o=>o.classList.remove("active"));
+        opt.classList.add("active");
+    });
+});
+</script>
+
+</body>
+</html>
