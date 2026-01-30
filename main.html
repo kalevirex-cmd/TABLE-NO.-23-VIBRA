@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NEXUS | Product Submit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#050a14;
+    --card:rgba(255,255,255,0.08);
+    --border:rgba(255,255,255,0.2);
+    --neon:#00f7ff;
+    --text:#e6f1ff;
+    --muted:#8fa3c7;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+        radial-gradient(circle at top, #0f1b3d, #050a14 60%);
+    color:var(--text);
+}
+
+/* Card */
+form{
+    width:360px;
+    padding:30px 28px;
+    border-radius:18px;
+    background:var(--card);
+    backdrop-filter: blur(14px);
+    border:1px solid var(--border);
+    box-shadow:0 0 25px rgba(0,247,255,.15);
+}
+
+/* Heading */
+form h1{
+    font-family:'Orbitron', sans-serif;
+    font-size:22px;
+    text-align:center;
+    color:var(--neon);
+    margin-bottom:5px;
+}
+
+form p{
+    text-align:center;
+    font-size:11px;
+    color:var(--muted);
+    margin-bottom:20px;
+}
+
+/* Labels */
+label{
+    font-size:12px;
+    margin:12px 0 6px;
+    color:#cdd9ff;
+}
+
+/* Inputs */
+input{
+    width:100%;
+    padding:11px 14px;
+    border-radius:8px;
+    border:1px solid var(--border);
+    background:rgba(255,255,255,0.06);
+    color:var(--text);
+    outline:none;
+    transition:.3s;
+}
+
+input::placeholder{
+    color:#9fb1d8;
+    font-size:12px;
+}
+
+input:focus{
+    border-color:var(--neon);
+    box-shadow:0 0 10px rgba(0,247,255,.6);
+}
+
+/* Button */
+button{
+    margin-top:20px;
+    width:100%;
+    padding:12px;
+    border-radius:10px;
+    border:none;
+    cursor:pointer;
+    font-family:'Orbitron', sans-serif;
+    font-size:14px;
+    letter-spacing:1px;
+    color:#001014;
+    background:linear-gradient(135deg, #00f7ff, #00c2ff);
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 0 20px rgba(0,247,255,.8);
+}
+
+/* Footer text */
+.footer{
+    margin-top:15px;
+    font-size:10px;
+    text-align:center;
+    color:var(--muted);
+}
+</style>
+</head>
+
+<body>
+
+<form method="post" name="product" id="product">
+    <h1>SOULNET DATA</h1>
+    <p>VIBRA</p>
+
+    <label>Product Name *</label>
+    <input type="text" name="Title" placeholder="Enter product name" required>
+
+    <label>Rate *</label>
+    <input type="text" name="details" placeholder="Enter product details" required>
+
+    <label>Date *</label>
+    <input type="date" name="date" required>
+
+    <label>Time *</label>
+    <input type="time" name="time" required>
+
+    <button type="submit">SUBMIT →</button>
+
+    <div class="footer">Powered by NEXUS</div>
+</form>
+
+<script>
+const scriptURL = 'https://script.google.com/macros/s/AKfycbx5OGp4VCQ1e7Wrlvpa1FcpjEzYpIAqM7D4Q_T6E7v0iGgzZmnYZ5s6h00wGGYrS3lNHQ/exec'
+const form = document.forms['product']
+
+form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(() => alert("🚀 Submitted Successfully!"))
+    .then(() => window.location.reload())
+    .catch(error => console.error('Error!', error.message))
+})
+</script>
+
+</body>
+</html>
